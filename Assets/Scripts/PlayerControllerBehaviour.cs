@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerBehaviour : MonoBehaviour
 {
+    //fields
     [SerializeField] private Transform _modelTransform = default;
     [SerializeField] private Transform _cameraArmTransform = default;
     [SerializeField] private Transform _cameraTransform = default;
