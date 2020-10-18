@@ -1,0 +1,50 @@
+{
+    "name": "DefaultInput",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "e9074f22-83d8-40a9-8757-894f7a5b2e63",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "3d510b62-ceaf-4137-97a1-d1dc4080eca5",
+                    "expectedControlType": "Vector2",
+                    "processors": "InvertVector2(invertX=false)",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cbcd0dba-1f28-47b7-af3c-5748f8e43594",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard&Mouse",
+            "bindingGroup": "Keyboard&Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
