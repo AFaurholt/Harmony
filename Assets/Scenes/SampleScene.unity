@@ -796,7 +796,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 963194228}
   _cameraFocusTransform: {fileID: 1223350755}
   _cameraRadius: 4
-  _speed: 1
+  _speed: 5
 --- !u!4 &1848860446
 Transform:
   m_ObjectHideFlags: 0

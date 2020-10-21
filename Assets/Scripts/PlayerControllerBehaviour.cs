@@ -12,12 +12,13 @@ public class PlayerControllerBehaviour : MonoBehaviour
     [SerializeField] private Transform _cameraArmTransform = default;
     [SerializeField] private Transform _cameraTransform = default;
     [SerializeField] private Transform _cameraFocusTransform = default;
-    [SerializeField] private float _cameraRadius = 3f;
+    [SerializeField] private float     _cameraRadius = 3f;
 
     [SerializeField] private float _speed = 10f;
 
     private CharacterController _characterController = default;
     private Vector2 _mouseMoved = Vector2.zero;
+    private InputAction _onLookAction = null;
 
 #if UNITY_EDITOR
     private readonly float _debugLineLength = 3f;
@@ -26,6 +27,8 @@ public class PlayerControllerBehaviour : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        var playerInput = GetComponent<PlayerInput>();
+        _onLookAction = playerInput.actions["Look"];
     }
 
     // Update is called once per frame
@@ -66,8 +69,24 @@ public class PlayerControllerBehaviour : MonoBehaviour
         //_characterController.Move(test * Time.deltaTime * _speed);
     }
 
+#pragma warning disable IDE0051
     private void OnLook(InputValue value)
+#pragma warning restore IDE0051
     {
-        _mouseMoved += value.Get<Vector2>();
+        _mouseMoved += value.Get<Vector2>() * Time.deltaTime * _speed;
+    }
+
+#pragma warning disable IDE0051
+    private void OnCaptureMouse(InputValue _)
+#pragma warning restore IDE0051
+    {
+        if (_onLookAction.enabled)
+        {
+            _onLookAction.Disable();
+        }
+        else
+        {
+            _onLookAction.Enable();
+        }
     }
 }

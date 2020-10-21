@@ -12,6 +12,14 @@
                     "expectedControlType": "Vector2",
                     "processors": "InvertVector2(invertX=false)",
                     "interactions": ""
+                },
+                {
+                    "name": "CaptureMouse",
+                    "type": "Button",
+                    "id": "cca70d69-8363-4816-bbad-86446249da44",
+                    "expectedControlType": "Button",
+                    "processors": "InvertVector2(invertX=false)",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -23,6 +31,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0517ae2b-c559-42e8-b477-70410a9b0970",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CaptureMouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
